@@ -193,5 +193,10 @@ namespace GUI_Basis_xml
         {
             MessageBox.Show("Hier moeten de gegevens worden opgeslagen", "Opdracht", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void overToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //zorg dat er een about-box verschijnt
+        }
     }
 }

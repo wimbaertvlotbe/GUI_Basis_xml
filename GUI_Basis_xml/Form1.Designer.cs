@@ -388,8 +388,9 @@
             // overToolStripMenuItem
             // 
             this.overToolStripMenuItem.Name = "overToolStripMenuItem";
-            this.overToolStripMenuItem.Size = new System.Drawing.Size(123, 26);
+            this.overToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.overToolStripMenuItem.Text = "Over";
+            this.overToolStripMenuItem.Click += new System.EventHandler(this.overToolStripMenuItem_Click);
             // 
             // Form1
             // 
