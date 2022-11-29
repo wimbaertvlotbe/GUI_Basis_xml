@@ -11,8 +11,8 @@ namespace GUI_Basis_xml
     public class Persoon
     {
         private string id;
-        private string voornaam;
-        private string naam;
+        private string? voornaam;
+        private string? naam;
         private DateTime geboorteDatum;
 
         public Persoon(string id, string naam, string voornaam, DateTime geboorteDatum)
@@ -23,6 +23,7 @@ namespace GUI_Basis_xml
             if (TestGeboorteDatum(geboorteDatum)) this.geboorteDatum = geboorteDatum;
         }
 
+        //Testen op geldige ID
         public static bool TestID(string id)
         {
             string BEIDRegex = @"[0-9]{3}\-[0-9]{7}\-[0-9]{2}";
@@ -35,6 +36,7 @@ namespace GUI_Basis_xml
             return false;
         }
 
+        //testen op geldige geboortedatum
         public static bool TestGeboorteDatum(DateTime geboortedatum)
         {
             return (geboortedatum <= DateTime.Now)? true : false;
@@ -45,17 +47,20 @@ namespace GUI_Basis_xml
             get { return id; }
             set 
             { 
-                if (TestID(value)) id = value;
+                if (value !=null)
+                {
+                    if (TestID(value)) id = value;
+                }
             }
         }
 
-        public string Naam
+        public string? Naam
         {
             get { return naam; }
             set { this.naam = value; }
         }
 
-        public string Voornaam
+        public string? Voornaam
         {
             get { return voornaam; }
             set { this.voornaam = value; }
@@ -70,6 +75,7 @@ namespace GUI_Basis_xml
             }
         }
 
+        //Genereer een random ID
         public static string MaakID()
         {
             string uid = string.Empty;
